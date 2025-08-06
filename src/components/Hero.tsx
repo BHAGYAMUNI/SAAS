@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Sparkles, TrendingUp, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-dashboard.jpg';
@@ -36,14 +37,18 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-delay-300">
-              <Button variant="hero" size="xl" className="group">
-                Get Started Free
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="glass-primary" size="xl" className="group">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
-              </Button>
+              <Link to="/signup">
+                <Button variant="hero" size="xl" className="group">
+                  Get Started Free
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/demo">
+                <Button variant="glass-primary" size="xl" className="group">
+                  <Play className="mr-2 h-5 w-5" />
+                  Watch Demo
+                </Button>
+              </Link>
             </div>
 
             {/* Social Proof */}

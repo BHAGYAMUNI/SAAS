@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Video, FileText, Lightbulb } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -121,13 +122,13 @@ const Resources = () => {
                   
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">{post.readTime}</span>
-                    <a
-                      href={post.link}
+                    <Link
+                      to="/blog"
                       className="inline-flex items-center text-primary text-sm font-medium hover:text-primary-hover transition-colors"
                     >
                       Read More
                       <ArrowRight className="ml-1 h-4 w-4" />
-                    </a>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -136,9 +137,11 @@ const Resources = () => {
 
           {/* View All CTA */}
           <div className="text-center mt-12">
-            <button className="glass border-primary/20 text-primary hover:bg-primary/10 px-8 py-3 rounded-lg font-medium transition-all duration-300 hover-lift">
-              View All Articles
-            </button>
+            <Link to="/blog">
+              <button className="glass border-primary/20 text-primary hover:bg-primary/10 px-8 py-3 rounded-lg font-medium transition-all duration-300 hover-lift">
+                View All Articles
+              </button>
+            </Link>
           </div>
         </div>
 

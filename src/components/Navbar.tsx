@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,12 +20,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="p-2 rounded-lg bg-primary text-primary-foreground">
               <Zap className="h-6 w-6" />
             </div>
             <span className="text-xl font-bold gradient-text">ADmyBRAND AI</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -40,12 +42,17 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button variant="hero" size="sm">
-              Get Started Free
-            </Button>
+            <ThemeToggle />
+            <Link to="/signin">
+              <Button variant="ghost" size="sm">
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="hero" size="sm">
+                Get Started Free
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -76,12 +83,19 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="px-3 py-4 space-y-2">
-                <Button variant="ghost" size="sm" className="w-full">
-                  Sign In
-                </Button>
-                <Button variant="hero" size="sm" className="w-full">
-                  Get Started Free
-                </Button>
+                <div className="flex justify-center mb-2">
+                  <ThemeToggle />
+                </div>
+                <Link to="/signin">
+                  <Button variant="ghost" size="sm" className="w-full">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/signup">
+                  <Button variant="hero" size="sm" className="w-full">
+                    Get Started Free
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

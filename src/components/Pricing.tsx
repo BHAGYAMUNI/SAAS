@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Check, Star, Zap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -148,14 +149,28 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <Button 
-                  variant={plan.popular ? "hero" : "glass-primary"} 
-                  size="lg" 
-                  className="w-full mt-6"
-                >
-                  {plan.cta}
-                  {plan.name === "Enterprise" ? null : <Zap className="ml-2 h-4 w-4" />}
-                </Button>
+                {plan.name === "Enterprise" ? (
+                  <Link to="/demo">
+                    <Button 
+                      variant={plan.popular ? "hero" : "glass-primary"} 
+                      size="lg" 
+                      className="w-full mt-6"
+                    >
+                      {plan.cta}
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link to="/signup">
+                    <Button 
+                      variant={plan.popular ? "hero" : "glass-primary"} 
+                      size="lg" 
+                      className="w-full mt-6"
+                    >
+                      {plan.cta}
+                      <Zap className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}
