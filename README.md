@@ -4,7 +4,7 @@ A stunning, modern SaaS landing page built with React, TypeScript, and Tailwind 
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-vercel-url.vercel.app)
+https://preview-0aaf6a23--admybrand-ai-fluence.lovable.app/
 
 ## ✨ Features
 
