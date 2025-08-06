@@ -228,5 +228,3 @@ For questions or support, please contact:
 - GitHub Issues: [Create an issue](https://github.com/your-repo/issues)
 
 ---
-
-**Built with ❤️ for marketing professionals worldwide**
